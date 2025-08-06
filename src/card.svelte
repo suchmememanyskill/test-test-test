@@ -34,4 +34,8 @@
     .card-content {
         margin: auto;
     }
+
+    img {
+        max-width: 100%;
+    }
 </style>

@@ -56,13 +56,15 @@
 
   <div class="controls">
     {#if failed}
-      <h1>That's not correct!</h1>
+      <h1 style="margin-bottom: 0;">That's not correct!</h1>
       <h1>Score: {progression - 2}</h1>
       <button onclick={reset}>Try again?</button>
     {:else}
       <h1>Score: {progression - 2}</h1>
-      <button onclick={higher}>Higher</button>
-      <button onclick={lower}>Lower</button>
+      <div class="buttons">
+        <button onclick={higher}>Higher</button>
+        <button onclick={lower}>Lower</button>
+      </div>
     {/if}
   </div>
 </main>
@@ -109,12 +111,28 @@
     opacity: 0;
   }
 
+  .background:not(:has(> :nth-child(3))) > *:last-child
+  {
+    animation: none;
+    opacity: 1;
+    transition: none;
+  }
+
   .controls {
     display: flex;
     flex-direction: column;
     gap: 1em;
   }
 
+  .buttons {
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+  }
+
+  .buttons > button {
+    flex-grow: 1;
+  }
 
 @keyframes fadeIn {
   80% {

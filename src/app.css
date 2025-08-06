@@ -28,6 +28,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background: transparent !important;
 }
 
 h1 {
@@ -36,9 +37,21 @@ h1 {
   text-shadow: 2px 2px black;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
   h1 {
     font-size: 1.8em;
+  }
+
+  .buttons {
+    flex-direction: row-reverse !important;
+  }
+
+  body {
+    place-items: flex-end;
+  }
+
+  #app {
+    width: 100%;
   }
 }
 
